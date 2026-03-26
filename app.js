@@ -15,7 +15,6 @@ const firebaseConfig = {
     storageBucket: "bbq-in-atico-s-8bbe3.firebasestorage.app",
     messagingSenderId: "933531376764",
     appId: "1:933531376764:web:8eb66d7bbc60583dcbfdf9",
-    // NOTA: Para Realtime Database necesitas una URL. Prueba alguna de estas dos:
     databaseURL: "https://bbq-in-atico-s-8bbe3-default-rtdb.europe-west1.firebasedatabase.app/"
 };
 
