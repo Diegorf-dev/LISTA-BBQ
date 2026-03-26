@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Evento</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Firebase JS SDK vía CDN -->
+    <script type="module" src="app.js" defer></script>
+</head>
+
+<body>
+    <div id="app-container">
+        <!-- Pantalla de Bienvenida -->
+        <div id="welcome-screen" class="screen view-hidden">
+            <div class="card glass">
+                <h1>¡Hola! 😎</h1>
+                <p>Para unirte a la lista, dime tu nombre o apodo.</p>
+                <form id="join-form">
+                    <input type="text" id="username-input" placeholder="Tu nombre..." required maxlength="20"
+                        autocomplete="off">
+                    <button type="submit" class="btn-primary">Entrar al Evento</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Pantalla Principal del Evento -->
+        <div id="event-screen" class="screen view-hidden">
+            <header class="glass">
+                <h1 id="event-title">Cargando Evento...</h1>
+                <p id="event-desc">Únete y anota lo que traes</p>
+                <button id="btn-change-name" class="btn-small">Cambiar nombre</button>
+            </header>
+
+            <main>
+                <div class="my-contribution glass">
+                    <label for="my-item">¿Qué vas a llevar, <span id="display-name"></span>?</label>
+                    <div class="input-group">
+                        <input type="text" id="my-item" placeholder="Ej: 2 botellas de vino 🍷" autocomplete="off"
+                            maxlength="50">
+                        <button id="btn-add-item" class="btn-secondary">Añadir</button>
+                    </div>
+                    <ul id="my-pending-items" class="pending-list"></ul>
+                    <button id="btn-save-items" class="btn-primary" style="margin-top: 12px; display: none;">Confirmar
+                        mi aportación</button>
+                </div>
+
+                <div class="list-container">
+                    <h2>Lista de asistentes <span id="participant-count" class="badge">0</span></h2>
+                    <ul id="participants-list">
+                        <!-- Items se inyectan desde Firebase -->
+                    </ul>
+                </div>
+            </main>
+
+            <footer class="glass footer-fixed">
+                <button id="btn-share-wa" class="btn-whatsapp">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                        </path>
+                    </svg>
+                    Compartir en WhatsApp
+                </button>
+            </footer>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
