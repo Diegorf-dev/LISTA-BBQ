@@ -33,7 +33,7 @@ let hasLoadedInitialItems = false;
 const urlParams = newSearchParams();
 function newSearchParams() { return new URLSearchParams(window.location.search); }
 const urlP = new URLSearchParams(window.location.search);
-let eventId = urlP.get('event') || 'evento_demo';
+let eventId = urlP.get('event') || 'BBQ';
 
 if (!urlP.get('event')) {
     const newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?event=' + eventId;
