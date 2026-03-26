@@ -1,0 +1,234 @@
+:root {
+    --bg-color: #f0fdf4;
+    --primary: #22c55e;
+    --primary-hover: #16a34a;
+    --whatsapp: #25D366;
+    --whatsapp-hover: #128C7E;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #dcfce7 0%, #f0fdf4 100%);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+#app-container {
+    width: 100%;
+    max-width: 500px; /* Mobile first constraint */
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 90px; /* Space for footer */
+}
+
+.screen {
+    padding: 20px;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.view-hidden {
+    display: none !important;
+}
+
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+}
+
+/* Typography */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+}
+
+/* Forms & Inputs */
+input[type="text"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    margin-bottom: 12px;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary);
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+}
+
+.input-group input {
+    margin-bottom: 0;
+}
+
+button {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 20px;
+    transition: transform 0.1s, background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: #f3f4f6;
+    color: var(--text-main);
+    width: auto;
+}
+
+.btn-secondary:hover {
+    background-color: #e5e7eb;
+}
+
+.btn-small {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    width: auto;
+    background: transparent;
+    border: 1px solid #d1d5db;
+}
+
+.btn-whatsapp {
+    background-color: var(--whatsapp);
+    color: white;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--whatsapp-hover);
+}
+
+/* Event Screen */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.my-contribution {
+    margin-bottom: 24px;
+}
+
+.my-contribution label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.badge {
+    background: var(--primary);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    animation: slideIn 0.3s ease-out forwards;
+    border-left: 4px solid var(--primary);
+}
+
+li .name {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text-main);
+}
+
+li .item {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+
+.footer-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 20px 20px 0 0;
+    padding: 16px;
+    border-bottom: none;
+    z-index: 10;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
